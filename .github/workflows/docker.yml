@@ -15,14 +15,13 @@ jobs:
   build:
     name: ${{ matrix.tags }}
     runs-on: ubuntu-latest
-    environment: DockerHub
     strategy:
       matrix:
         include:
           - context: .
-            tags: hldtux/vitasdk:latest
+            tags: vitasdk/vitasdk:latest
           - context: ./non-root
-            tags: hldtux/vitasdk:non-root
+            tags: vitasdk/vitasdk:non-root
 
     steps:
       - uses: actions/checkout@v5
